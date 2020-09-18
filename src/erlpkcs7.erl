@@ -5,6 +5,7 @@
 -export ([
           pad/1,
           unpad/1,
+		  get_pad_binary/1,
 		  test/0
          ]).
 
@@ -16,7 +17,7 @@ pad(Bin) ->
 
 pad(Bin, PadAmount) ->
 	PadBinary = get_pad_binary(PadAmount),
-	<<Bin, PadBinary/binary>>.
+	<<Bin/binary, PadBinary/binary>>.
 
 unpad(<<>>) ->
 	<<>>;
